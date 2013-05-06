@@ -26,14 +26,15 @@ public class EventCommunication extends ServerConnection {
 	public JSONObject getEvents() throws ClientProtocolException,
 			IOException, JSONException, ServerResponseException {
 		String response = getDataFromURL(url);
-		Log.d(TAG, "Got response " + response);
 		JSONObject jsonObj = new JSONObject(response);
 
+		return jsonObj;
+		/*
 		if (isValidResponse(jsonObj)){
 			return jsonObj;
 		} else {
 			throw new ServerResponseException(jsonObj); // if it went through but wasn't valid for some reason tell higher ups why
-		}
+		}*/
 	}
 	
 	/**
@@ -42,6 +43,6 @@ public class EventCommunication extends ServerConnection {
 	 * @return true if the response did not signify an error
 	 */
 	private boolean isValidResponse(JSONObject response){
-		return (response.has("error"));
+		return (!response.has("error"));
 	}
 }
