@@ -14,7 +14,12 @@ import android.view.Menu;
 
 import com.JaredMavis.eventbriteassaignemtjaredmavis.R;
 import com.JaredMavis.eventbriteassigmentjaredmavis.ServerCommunication.EventCommunication;
+import com.JaredMavis.eventbriteassignmentjaredmavis.exceptions.ServerResponseException;
 
+/**
+ * @author Jared Mavis
+ *
+ */
 public class MainActivity extends Activity {
 	private final String TAG = "MainActivity";
 	
@@ -35,6 +40,8 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		} catch (JSONException e) {
 			e.printStackTrace();
+		} catch (ServerResponseException e) {
+			Log.e(TAG, e.getError());
 		}
 	}
 

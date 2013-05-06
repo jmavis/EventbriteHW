@@ -5,6 +5,10 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+/**
+ * @author Jared Mavis
+ *
+ */
 public class Event {
 	private final String TAG = "Event";
 	private long _id;

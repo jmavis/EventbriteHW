@@ -15,7 +15,10 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
-
+/**
+ * @author Jared Mavis
+ *
+ */
 public class ServerConnection {
 	private final String TAG = "ServerConnection";
 	
